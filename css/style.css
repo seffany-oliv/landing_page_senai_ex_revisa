@@ -6,4 +6,124 @@
   box-sizing: border-box;
 }
 
-/* Continuar digitação código CSS (deste ponto) */
+/* Variáveis do TEMA */
+:root {
+  --cor-primaria:#F9003D;
+  --cor-secundaria:#A259F7; 
+  --cor-destaque:#ffaf00;
+  --fundo-escuro:#080324;
+  --texto-clara:#fff;
+  --cor-cinza:#c7bab3;
+}
+/* Estilos gerais */
+body {
+  background-color: var(--fundo-escuro);
+  color: var(--texto-clara);
+  font-family: 'Bebas Neue', sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+}
+address {
+  /* Remove o itálico padrão datag address */
+  font-style: normal;
+}
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+/* Hearder (cabeçalho) */
+header {
+  background-color: var(--cor-primaria);
+  position: fixed; /* Fixa o header no topo da página */
+  width: 100%;
+  z-index: 10; /* Garante que o header fique acima de outros elementos */
+  padding: 0.5rem 0; 
+}
+.nav-header {
+  display: flex;  /* Exibe os itens do header em linha */
+  justify-content: space-between; /* Espaça os itens do header (logo e menu) */
+  align-items: center;/* Alinha os itens verticalmente */
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
+  gap: 1rem; /* Espaçamento entre os itens */
+
+  /* Inverter a ordem */
+  /* flex-direction: row-reverse; Inverte a ordem dos itens (logo à direita e menu à esquerda) */
+}
+.logo{
+  height: 40px; /* Ajuste a altura do logo conforme necessário */
+}
+/* Menu */
+.menu{
+    display: flex;/* Exibe os itens do menu em linha */
+    gap: 1.5rem; /* Espaçamento entre os itens do menu */
+    list-style: none; /* Remove as bolinhas da lista */
+  }
+
+  .menu a {
+    color: var(--texto-clara);
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-weight: 600; /* Deixa os links mais grossos */
+    font-size: 1.2rem;/* Aumenta o tamanho da fonte dos links */
+    transition: color 0.3s ease; /* Transição suave para a cor */
+  }
+  .menu a:hover {
+    color: var(--cor-destaque); /* Cor de destaque ao passar o mouse */
+
+  }
+  .btn-menu {
+    display: none; /* Esconde o botão de menu em telas maiores */
+
+  }
+  /* Botão contati-nos */
+  .botao {
+    background-color: var(--cor-secundaria);  /* Cor de fundo do botão */
+    color: var(--texto-clara);/* Cor do texto do botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 0.6rem 1.5rem; /* Espaçamento interno do botão */
+    font-weight: 700;/* Deixa o texto do botão mais grosso */
+    font-size: 1.2rem;/* Aumenta o tamanho da fonte do botão */
+    transition: all 0.3s ease-in-out; /* Transição suave para a cor de fundo */
+  }
+  .botao:hover {
+    background: linear-gradient(135deg,var(--cor-secundaria),var(--cor-destaque)); /* Cor de fundo do botão ao passar o mouse */
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);  /* Sombra ao passar o mouse */
+   transform: translateY(-2PX) scale(1.05); /* Leve elevação e aumento ao passar o mouse */
+  }
+
+  /* ___________________________________ */
+  /* Responsividade (Tamanho de telas diferentes */
+
+  /* Regra para quando a tela for menor que 768px */
+  @media (max-width: 768px) {
+    /* Header */
+    .nav-header {
+      justify-content: center; /* Centraliza os itens do header */
+    }
+    .menu {
+      padding-top: 0;/* Remove o padding superior do menu */
+    }
+          /* Programação "esclusiva para menu hamburger" */
+    .btn-menu {
+      display: block; /* Exibe o botão de menu em telas menores */
+      background: none; /* Remove o fundo do botão */
+      border: none; /* Remove a borda do botão */
+      color: var(--texto-clara); /* Cor do ícone do menu */
+      font-size: 2.5rem; /* Aumenta o tamanho do ícone do menu */
+      cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    }
+    .nav-header{
+      justify-content: space-between; /* Espaça os itens do header (logo e menu) */
+    }
+    .menu {
+      display: none; /* Esconde o menu em telas menores */
+      width: 100%; /* Faz o menu ocupar toda a largura disponível */
+      flex-direction: column; /* Exibe os itens do menu em coluna */
+      align-items: center; /* Centraliza os itens do menu */
+      padding-top: 1rem; /* Espaçamento interno do menu */
+    }
+    .menu.aberto {
+      display: flex; /* Exibe o menu quando a classe "aberto" for adicionada */
+    }
+  }
