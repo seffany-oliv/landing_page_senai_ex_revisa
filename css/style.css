@@ -79,7 +79,7 @@ header {
   /* Botão contati-nos */
   .botao {
     background-color: var(--cor-secundaria);  /* Cor de fundo do botão */
-    color: var(--texto-clara);/* Cor do texto do botão */
+    color: var(--texto-clara)!important;/* Cor do texto do botão */
     border-radius: 5px; /* Bordas arredondadas */
     padding: 0.6rem 1.5rem; /* Espaçamento interno do botão */
     font-weight: 700;/* Deixa o texto do botão mais grosso */
@@ -91,6 +91,154 @@ header {
    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);  /* Sombra ao passar o mouse */
    transform: translateY(-2PX) scale(1.05); /* Leve elevação e aumento ao passar o mouse */
   }
+
+  /* Banner Principal (main) */
+  .banner {
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../assets/imagem-fundo-banner.jpg"); /* Imagem de fundo do banner com sobreposição */
+    background-size: cover; /* Cobre toda a área do banner */
+    background-position: center; /* Centraliza a imagem de fundo */
+    min-height: 100vh; /* Altura mínima do banner igual à altura da tela */
+    display: flex; /* Exibe o conteúdo do banner como flexbox */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    text-align: center; /* Centraliza o texto */
+    padding-top: 60px; /* Espaçamento interno do banner */
+  }
+
+  .conteudo-banner h1{
+    font-size: 5rem; /* Tamanho da fonte do título do banner */
+    margin-bottom: 1rem; /* Espaçamento inferior do título do banner */
+  }
+  .linha-destaque {
+    width: 400px; /* Largura da linha de destaque */
+    height: 2px; /* Altura da linha de destaque */
+    background-color: var(--cor-destaque); /* Cor da linha de destaque */
+    margin: 1rem auto; /* Centraliza a linha e adiciona espaçamento inferior */
+  }
+
+  .subtitulo{
+    font-size: 1.8rem; /* Tamanho da fonte do subtítulo do banner */
+    color: var(--cor-cinza); /* Cor do subtítulo do banner */
+    margin-bottom: 2rem;
+  }
+  .mouse {
+    width: 60px;
+    margin-top: 2rem;
+    opacity: 0.8;
+  }
+
+/* Seção Sobre */
+  .sobre{
+    background-color: #181812;
+    padding: 4rem 0;
+  }
+  .titulo-secao{
+    color: var(--cor-primaria);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  /*  */
+  .conteudo-sobre{
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
+  }
+  .imagem-sobre{
+    width: 45%;
+    border-radius: 10px;
+    min-width: 300px; /* Garante que a imagem não fique muito pequena em telas menores */
+    flex: 1; /* Permite que a imagem cresça para ocupar o espaço disponível */
+  }
+  .texto-sobre{
+    width: 50%; /* Garante que o texto não fique muito pequeno em telas menores */
+    min-width: 300px; /* Garante que o texto não fique muito pequeno em telas menores */
+    flex: 1; /* Permite que o texto cresça para ocupar o espaço disponível */
+  }
+  .destaque{
+    color: var(--cor-destaque);
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  .texto-sobre h3{
+    font-size: 2.5rem;
+    margin: 1rem 0;
+  }
+  .texto-sobre p{
+    font-size: 1.2rem;
+    color: var(--cor-cinza);
+  }
+
+  /* Cards (Estilizados) */
+    .info {
+      padding: 4rem 0;
+      text-align: center;
+    }
+    .cards-info{
+      list-style: none; /* Remove as bolinhas da lista */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
+    }
+    .card{
+      background-color: #241a1c;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      width: 300px;
+    }
+    .card h3{
+      color: var(--cor-destaque);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .card p{
+      background-color: #080324;
+      padding: 1.5rem;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 1.5rem;
+
+    }
+    
+    /* Seção (Endereço) */
+    .endereco{
+      padding: 4rem 0;
+    }
+    .conteudo-endereco{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .texto-endereco{
+      font-size: 1.3rem;
+      line-height: 1.8;/* Espaçamento entre as linhas do endereço */
+      flex-grow: 1;/* Permite que o texto do endereço cresça para ocupar o espaço disponível */
+    }
+    .mapa{
+      width: 350px;
+      border-radius: 10px;
+      /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); Sombra para o mapa */
+      box-shadow: 20px 20px 10px rgba(255, 0, 0, 1); /* Sombra para o mapa */
+    }
+
+    /* Footer (Rodapé) */
+    .footer{
+      background-color: var(--cor-primaria);
+      text-align: center;
+      padding: 1.5rem 0;
+      margin-top: 4rem;
+      font-size: 1.2rem;
+    }
+
+
 
   /* ___________________________________ */
   /* Responsividade (Tamanho de telas diferentes */
@@ -104,6 +252,15 @@ header {
     .menu {
       padding-top: 0;/* Remove o padding superior do menu */
     }
+    .conteudo-sobre, .conteudo-endereco {
+      flex-direction: column; /* Exibe os itens em coluna */
+      gap: 2rem;
+    }
+    .imagem-sobre, .texto-sobre{
+      width: 100%; /* Faz a imagem e o texto ocuparem toda a largura disponível */
+    }
+
+
           /* Programação "esclusiva para menu hamburger" */
     .btn-menu {
       display: block; /* Exibe o botão de menu em telas menores */
@@ -126,4 +283,14 @@ header {
     .menu.aberto {
       display: flex; /* Exibe o menu quando a classe "aberto" for adicionada */
     }
+
+    /* Redus o tamanho do ícone do menu em telas menores */
+    .conteudo-banner h1 {font-size: 3.5rem; /* Reduz o tamanho do título do banner */}
+    .subtitulo {font-size: 1.5rem;}
+    .titulo-secao {font-size: 2.5rem;}
+    .texto-sobre h3 {font-size: 2rem;}
+    .texto-sobre p {font-size: 1.1rem;}
+    .card h3 {font-size: 1.5rem;}
+    .card p {font-size: 1.3rem;}
+    .texto-endereco {font-size: 1.1rem;}
   }
